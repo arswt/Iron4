@@ -1,0 +1,81 @@
+sub_units = {
+
+	super_armor = {
+		sprite = heavy_armor
+		map_icon_category = armored
+		priority = 2520
+		ai_priority = 2520
+		active = yes
+
+		type = {
+			armor
+		}
+		
+		group = armor
+
+		categories = {
+			category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+		}
+
+		combat_width = 1
+
+		need = {
+			super_tank_equipment = 25
+		}
+
+		manpower = 500
+		max_organisation = 100
+		default_morale = 1
+		max_strength = 50
+		training_time = 2
+		weight = 0.1
+		supply_consumption = 0.05
+
+		initiative = 0.05
+		equipment_capture_factor = 0.05
+		reliability_factor = 0.05
+		recon = 0.05
+
+		#Tanks are awesome
+		# soft_attack = 0.5
+		
+		forest = {
+			defence = 0.25
+			movement = 0.25
+		}
+		hills = {
+			defence = 0.1
+			movement = 0.25
+		}		
+		mountain = {
+			movement = 0.25
+		}	
+		jungle = {
+			defence = 0.25
+			movement = 0.25
+		}
+		marsh = {
+			defence = 0.25
+			movement = 0.25
+		}
+		fort = {
+			attack = 0.1
+			defence = 0.25
+			movement = 0.25
+		}
+		river = {
+			defence = 0.25
+			movement = 0.25
+		}
+		amphibious = {
+			attack = 0.25
+			movement = 0.25
+		}	
+		fort = {
+			attack = 0.25
+		}
+	}
+}

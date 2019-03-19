@@ -1,0 +1,9 @@
+generic = {
+	super_armor = {
+		prefix = ""
+		generic = { "Super Arsenal Tank Brigade" }
+		generic_pattern = "UNIT_GENERIC_NAME_GENERIC_INFANTRY"
+		unique = {}
+	}
+}
+
