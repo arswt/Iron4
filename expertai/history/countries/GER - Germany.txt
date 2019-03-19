@@ -40,6 +40,36 @@ set_technology = {
 	formation_flying = 1
 	synth_oil_experiments = 1
 	transport = 1
+	#############
+#	bicycle_infantry = 1
+	#############
+#	main_battle_tank = 1
+#	modern_td = 1
+#	modern_art = 1
+#	modern_spaa = 1
+#	super_heavy_tank = 1
+#	super_heavy_td = 1
+#	super_heavy_art = 1
+#	super_heavy_spaa = 1
+#	jet_fighter2 = 1
+#	jet_tactical_bomber2 = 1
+#	jet_strategic_bomber1 = 1
+#	naval_bomber3 = 1
+#	CAS3 = 1
+#	mechanised_infantry3 = 1
+#	advanced_destroyer = 1
+#	advanced_light_cruiser = 1
+#	advanced_heavy_cruiser = 1
+#	advanced_battleship = 1
+#	heavy_battleship2 = 1
+#	tank_landing_craft = 1
+#	advanced_carrier = 1
+#	advanced_submarine = 1
+#	landing_craft = 1
+#	jet_engines = 1
+#	improved_rocket_engines = 1
+#	advanced_rocket_engines = 1
+#	motorized_rocket_unit = 1
 }
 
 
@@ -47,7 +77,7 @@ set_technology = {
 
 set_variable = { var = wehrmacht_anger value = 0 }
 set_variable = { var = ss_anger value = 0 }
-set_research_slots = 4
+set_research_slots = 6 # default 4
 set_convoys = 200
 set_stability = 0.75 
 set_war_support = 0.3
@@ -350,39 +380,89 @@ create_corps_commander = {
 	logistics_skill = 1
 }
 
-create_corps_commander = {
+create_field_marshal = {
 	name = "Erwin Rommel"
 	picture = "Portrait_Germany_Erwin_Rommel.dds"
-	traits = { trickster trait_reckless war_hero armor_officer media_personality }
-	skill = 4
+	traits = {
+		brilliant_strategist
+		war_hero
+		bearer_of_artillery
+		cavalry_officer
+		armor_officer
+		## field marshal
+		logistics_wizard
+		offensive_doctrine
+		defensive_doctrine
+		fast_planner
+		thorough_planner
+		unyielding_defender
+		aggressive_assaulter
+		organisational_leader
+		inspirational_leader
+		expert_delegator
+		## corps commander
+		organizer
+		cavalry_leader
+		infantry_leader
+		skilled_staffer
+		trickster
+		winter_specialist
+		adaptable
+		winter_expert
+		trait_engineer
+		panzer_leader
+		commando
+		desert_fox
+		swamp_fox
+		trait_mountaineer
+		hill_fighter
+		jungle_rat
+		ranger
+		urban_assault_specialist
+		naval_invader
+		panzer_expert
+		combined_arms_expert
+		cavalry_expert
+		fortress_buster
+		scavenger
+		infantry_expert
+		ambusher
+		invader_ii
+		naval_liason
+		skirmisher
+		paratrooper
+		expert_improviser
+		guerilla_fighter
+		  }
+	skill = 9
 	id = 4
-	attack_skill = 4
-	defense_skill = 4
-	planning_skill = 2
-	logistics_skill = 3
+	attack_skill = 10
+	defense_skill = 10
+	planning_skill = 10
+	logistics_skill = 10
 }
 
-create_corps_commander = {
+create_field_marshal = {
 	name = "Erich von Manstein"
 	picture = "Portrait_Germany_Erich_von_Manstein.dds"
-	traits = { trickster armor_officer brilliant_strategist trait_engineer }
+	traits = { trickster armor_officer brilliant_strategist trait_engineer logistics_wizard panzer_leader panzer_expert offensive_doctrine }
 	skill = 4
 	id = 5
-	attack_skill = 2
+	attack_skill = 6
 	defense_skill = 4
 	planning_skill = 3
 	logistics_skill = 4
 }
 
-create_corps_commander = {
+create_field_marshal = {
 	name = "Heinz Guderian"
 	picture = "Portrait_Germany_Heinz_Guderian.dds"
-	traits = { trickster brilliant_strategist panzer_leader armor_officer career_officer }
+	traits = { trickster brilliant_strategist panzer_leader panzer_expert armor_officer career_officer logistics_wizard offensive_doctrine}
 	skill = 4
 	id = 6
-	attack_skill = 2
-	defense_skill = 4
-	planning_skill = 4
+	attack_skill = 7
+	defense_skill = 3
+	planning_skill = 1
 	logistics_skill = 3
 }
 
