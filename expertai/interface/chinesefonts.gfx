@@ -1,0 +1,45 @@
+bitmapfonts = {
+
+	bitmapfont = {
+		name = "standard_18z"
+		path = "gfx/fonts/Arial_16s"
+	    color = 0xffffffff
+	}
+
+	bitmapfont = {
+		name = "hoi_24headerz"
+		path = "gfx/fonts/Arial_20s"
+	    color = 0xffffffff
+	}
+	
+	bitmapfont = {
+		name = "hoi_30headerz"
+		path = "gfx/fonts/Arial_26s"
+	    color = 0xffffffff
+	}
+	
+	bitmapfont = {
+		name = "cg_16bz"
+		path = "gfx/fonts/Arial_14"
+	    color = 0xffffffff
+	}
+	
+	bitmapfont = {
+		name = "hoi_20bsz"
+		path = "gfx/fonts/Arial_16s"
+	    color = 0xffffffff
+	}
+	
+	bitmapfont = {
+		name = "vic_22z"
+		path = "gfx/fonts/Arial_20"
+	    color = 0xffffffff
+	}
+	
+	bitmapfont = {
+		name = "standard_22z"
+		path = "gfx/fonts/Arial_20s"
+	    color = 0xffffffff
+	}
+	
+	}

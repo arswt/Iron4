@@ -1,0 +1,123 @@
+EAI_USA_joins_allies = {
+	enable = {
+		OR = { tag = USA tag = ENG }
+		is_historical_focus_on = yes
+		USA = { has_government = democratic }
+		ENG = { has_government = democratic }
+		NOT = { USA = { has_idea = EAI_neutrality_idea_USA } }
+		
+		OR = {
+			USA = { has_war = yes }
+		
+			SOV = { has_capitulated = yes }
+			SOV = { exists = no }
+			SOV = { is_subject = yes }
+			SOV = { is_in_faction_with = GER }
+			SOV = { has_war_with = ENG }
+			
+			AND = {
+				date > 1941.1.1
+				SOV = { has_war_with = GER }
+				SOV = { surrender_progress > 0.3 }
+			}
+			
+			date > 1942.1.1
+			
+			any_state = {
+				OR = { region = 1 region = 2 region = 3 }
+				NOT = { is_controlled_by = ENG }
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "ENG"			
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "USA"			
+		value = 200
+	}
+}
+
+USA_save_the_aussies = {
+	enable = {
+		tag = USA
+		has_government = democratic
+		is_in_faction = no
+		has_war = no
+
+		JAP = {	has_war_with = AST }
+		AST = {
+			has_government = democratic			
+			surrender_progress > 0.15
+		}
+		has_opinion = {
+			target = AST
+			value > 0 # not if we hate AST
+		}
+	}
+	abort = {
+		OR = {
+			has_war_with = AST
+			is_in_faction_with = JAP
+			JAP = {	
+				NOT = { has_war_with = AST } 
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = contain
+		id = "JAP"			
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = protect
+		id = "AST"			
+		value = 200
+	}
+}
+
+USA_save_india = { # in the case where japan has beaten china and is moving on india we should step up
+	enable = {
+		tag = USA
+		has_government = democratic
+		is_in_faction = no
+		has_war = no
+
+		JAP = {	
+			has_war_with = RAJ 
+			NOT = { has_war_with = CHI }
+		}
+		RAJ = {
+			is_in_faction_with = ENG
+			surrender_progress > 0.15
+		}
+	}
+	abort = {
+		OR = {
+			has_war_with = RAJ
+			is_in_faction_with = JAP
+			JAP = {	
+				NOT = { has_war_with = RAJ } 
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = contain
+		id = "JAP"			
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = protect
+		id = "RAJ"			
+		value = 200
+	}
+}

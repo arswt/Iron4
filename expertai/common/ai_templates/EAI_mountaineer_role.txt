@@ -1,0 +1,2821 @@
+############################################################################################################
+#	Expert AI mod templates
+############################################################################################################
+
+############################################################################
+#	MOUNTAINEER ROLE
+############################################################################
+
+mountaineer_role_early = {
+	roles = { mountaineer }
+	upgrade_prio = { factor = 0 }
+	match_to_count = 0.8
+
+	EARLY_MOUNTAINEER_TEMPLATE = {
+		upgrade_prio = {
+			factor = 0.01
+
+			#ARMY FOCUS REQ.
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/mountaineer_spec_ops } }
+		}
+		production_prio = {
+			factor = 0.01
+
+			#ARMY FOCUS REQ.
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/mountaineer_spec_ops } }
+		}
+
+		#TEMPLATE
+		target_width = 18
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 9
+			}
+
+			support = {
+				engineer = 1
+			}
+		}
+	}
+	EARLY_MOUNTAINEER_TEMPLATE_2 = {
+		upgrade_prio = {
+			factor = 0.01
+
+			#ARMY FOCUS REQ.
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/mountaineer_spec_ops } }
+		}
+		production_prio = {
+			factor = 0.01
+
+			#ARMY FOCUS REQ.
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/mountaineer_spec_ops } }
+		}
+
+		#TEMPLATE
+		target_width = 24
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 12
+			}
+
+			support = {
+				engineer = 1
+			}
+		}
+	}
+	EARLY_MOUNTAINEER_TEMPLATE_3 = {
+		upgrade_prio = {
+			factor = 0.01
+
+			#ARMY FOCUS REQ.
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/mountaineer_spec_ops } }
+		}
+		production_prio = {
+			factor = 0.01
+
+			#ARMY FOCUS REQ.
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/mountaineer_spec_ops } }
+		}
+
+		#TEMPLATE
+		target_width = 12
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 6
+			}
+
+			support = {
+				engineer = 1
+			}
+		}
+	}
+	EARLY_MOUNTAINEER_TEMPLATE_4 = {
+		upgrade_prio = {
+			factor = 0.01
+
+			#ARMY FOCUS REQ.
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/mountaineer_spec_ops } }
+		}
+		production_prio = {
+			factor = 0.01
+
+			#ARMY FOCUS REQ.
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/mountaineer_spec_ops } }
+		}
+
+		#TEMPLATE
+		target_width = 12
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 2
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 6
+			}
+
+			support = {
+				engineer = 1
+			}
+		}
+	}
+	EARLY_MOUNTAINEER_TEMPLATE_5 = {
+		upgrade_prio = {
+			factor = 0.01
+
+			#ARMY FOCUS REQ.
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/mountaineer_spec_ops } }
+		}
+		production_prio = {
+			factor = 0.01
+
+			#ARMY FOCUS REQ.
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/mountaineer_spec_ops } }
+		}
+
+		#TEMPLATE
+		target_width = 6
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 2
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 3
+			}
+		}
+	}
+	EARLY_MOUNTAINEER_TEMPLATE_6 = {
+		upgrade_prio = {
+			factor = 0.01
+
+			#ARMY FOCUS REQ.
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/mountaineer_spec_ops } }
+		}
+		production_prio = {
+			factor = 0.01
+
+			#ARMY FOCUS REQ.
+			modifier = { factor = 0 NOT = { has_country_flag = EAI_FOCUS/mountaineer_spec_ops } }
+		}
+
+		#TEMPLATE
+		target_width = 8
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 4
+			}
+		}
+	}
+}
+
+mountaineer_role = {
+	roles = { mountaineer }
+	upgrade_prio = {
+		factor = 1
+
+		#event trigger
+		modifier = { factor = 0 NOT = { has_country_flag = EAI_mountaineer_template_upgrade } }
+	}
+	match_to_count = 0.5
+
+	##################################################################################################################
+	#	MOBILE WARFARE	
+	##################################################################################################################
+
+	######################################################## 20w
+
+	############################ pure mountaineer
+
+	MW_MOUNTAINEER_TEMPLATE_20_A = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 20
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 10
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+		}
+	}
+
+	############################ 7/2
+
+	MW_MOUNTAINEER_TEMPLATE_20_B = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 20
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 7
+				artillery_brigade = 2
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+		}
+	}
+
+	############################ 4/4
+
+	MW_MOUNTAINEER_TEMPLATE_20_C = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 20
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 4
+				artillery_brigade = 4
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+		}
+	}
+
+	######################################################## 26w
+
+	############################ pure mountaineer
+
+	MW_MOUNTAINEER_TEMPLATE_26_A = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 26
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 13
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+		}
+	}
+
+	############################ 7/2
+
+	MW_MOUNTAINEER_TEMPLATE_26_B = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 27
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 9
+				artillery_brigade = 3
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+		}
+	}
+
+	############################ 4/4
+
+	MW_MOUNTAINEER_TEMPLATE_26_C = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 27
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 6
+				artillery_brigade = 5
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+		}
+	}
+	
+	######################################################## 40w
+
+	############################ pure mountaineer
+
+	MW_MOUNTAINEER_TEMPLATE_40_A = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 40
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 20
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+				logistics_company = 1
+				signal_company = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+			logistics_company
+			signal_company
+		}
+	}
+
+	############################ 7/2
+
+	MW_MOUNTAINEER_TEMPLATE_40_B = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 40
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 14
+				artillery_brigade = 4
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+				logistics_company = 1
+				signal_company = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+			logistics_company
+			signal_company
+		}
+	}
+
+	############################ 4/4
+	
+	MW_MOUNTAINEER_TEMPLATE_40_C = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MW_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 41
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 10
+				artillery_brigade = 7
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+				logistics_company = 1
+				signal_company = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+			logistics_company
+			signal_company
+		}
+	}	
+
+	##################################################################################################################
+	#	SUPERIOR FIREPOWER
+	##################################################################################################################
+
+	######################################################## 20w
+
+	############################ pure mountaineer
+
+	SF_MOUNTAINEER_TEMPLATE_20_A = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 20
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 10
+			}
+
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_tank = 1
+				field_hospital = 1
+				rocket_artillery = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+
+			#SUPPORT
+			engineer
+			artillery
+			anti_tank
+			field_hospital
+			rocket_artillery
+		}
+	}
+
+	############################ 7/2
+
+	SF_MOUNTAINEER_TEMPLATE_20_B = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 20
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 7
+				artillery_brigade = 2
+			}
+
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_tank = 1
+				field_hospital = 1
+				rocket_artillery = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			artillery
+			anti_tank
+			field_hospital
+			rocket_artillery
+		}
+	}
+
+	############################ 4/4
+
+	SF_MOUNTAINEER_TEMPLATE_20_C = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 20
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 4
+				artillery_brigade = 4
+			}
+
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_tank = 1
+				field_hospital = 1
+				rocket_artillery = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			artillery
+			anti_tank
+			field_hospital
+			rocket_artillery
+		}
+	}
+
+	######################################################## 26w
+
+	############################ pure mountaineer
+
+	SF_MOUNTAINEER_TEMPLATE_26_A = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 26
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 13
+			}
+
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_tank = 1
+				field_hospital = 1
+				rocket_artillery = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+
+			#SUPPORT
+			engineer
+			artillery
+			anti_tank
+			field_hospital
+			rocket_artillery
+		}
+	}
+
+	############################ 7/2
+
+	SF_MOUNTAINEER_TEMPLATE_26_B = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 27
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 9
+				artillery_brigade = 3
+			}
+
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_tank = 1
+				field_hospital = 1
+				rocket_artillery = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			artillery
+			anti_tank
+			field_hospital
+			rocket_artillery
+		}
+	}
+
+	############################ 4/4
+
+	SF_MOUNTAINEER_TEMPLATE_26_C = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 27
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 6
+				artillery_brigade = 5
+			}
+
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_tank = 1
+				field_hospital = 1
+				rocket_artillery = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			artillery
+			anti_tank
+			field_hospital
+			rocket_artillery
+		}
+	}
+	
+	######################################################## 40w
+
+	############################ pure mountaineer
+
+	SF_MOUNTAINEER_TEMPLATE_40_A = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 40
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 20
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				logistics_company = 1
+				signal_company = 1
+				rocket_artillery = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+
+			#SUPPORT
+			engineer
+			anti_tank
+			logistics_company
+			signal_company
+			rocket_artillery
+		}
+	}
+
+	############################ 7/2
+
+	SF_MOUNTAINEER_TEMPLATE_40_B = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 40
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 14
+				artillery_brigade = 4
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				logistics_company = 1
+				signal_company = 1
+				rocket_artillery = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			logistics_company
+			signal_company
+			rocket_artillery
+		}
+	}
+
+	############################ 4/4
+	
+	SF_MOUNTAINEER_TEMPLATE_40_C = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/SF_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 41
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 10
+				artillery_brigade = 7
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				logistics_company = 1
+				signal_company = 1
+				rocket_artillery = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			logistics_company
+			signal_company
+			rocket_artillery
+		}
+	}
+
+	##################################################################################################################
+	#	GRAND BATTLEPLAN
+	##################################################################################################################
+
+	######################################################## 20w
+
+	############################ pure mountaineer
+
+	GB_MOUNTAINEER_TEMPLATE_20_A = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 20
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 10
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+		}
+	}
+
+	############################ 7/2
+
+	GB_MOUNTAINEER_TEMPLATE_20_B = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 20
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 7
+				artillery_brigade = 2
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+		}
+	}
+
+	############################ 4/4
+
+	GB_MOUNTAINEER_TEMPLATE_20_C = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 20
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 4
+				artillery_brigade = 4
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+		}
+	}
+
+	######################################################## 26w
+
+	############################ pure mountaineer
+
+	GB_MOUNTAINEER_TEMPLATE_26_A = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 26
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 13
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+				logistics_company = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+			logistics_company
+		}
+	}
+
+	############################ 7/2
+
+	GB_MOUNTAINEER_TEMPLATE_26_B = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 27
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 9
+				artillery_brigade = 3
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+				logistics_company = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+			logistics_company
+		}
+	}
+
+	############################ 4/4
+
+	GB_MOUNTAINEER_TEMPLATE_26_C = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_26w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 27
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 6
+				artillery_brigade = 5
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+				logistics_company = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+			logistics_company
+		}
+	}
+	
+	######################################################## 40w
+
+	############################ pure mountaineer
+
+	GB_MOUNTAINEER_TEMPLATE_40_A = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 40
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 20
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+				logistics_company = 1
+				signal_company = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+			logistics_company
+			signal_company
+		}
+	}
+
+	############################ 7/2
+
+	GB_MOUNTAINEER_TEMPLATE_40_B = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 40
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 14
+				artillery_brigade = 4
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+				logistics_company = 1
+				signal_company = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+			logistics_company
+			signal_company
+		}
+	}
+
+	############################ 4/4
+	
+	GB_MOUNTAINEER_TEMPLATE_40_C = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/GB_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 41
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 10
+				artillery_brigade = 7
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				field_hospital = 1
+				logistics_company = 1
+				signal_company = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			field_hospital
+			logistics_company
+			signal_company
+		}
+	}
+
+	##################################################################################################################
+	#	MASS ASSAULT
+	##################################################################################################################
+
+	######################################################## 20w
+
+	############################ pure mountaineer
+
+	MA_MOUNTAINEER_TEMPLATE_20_A = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MA_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MA_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 20
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 2
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 7
+				artillery_brigade = 2
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				anti_air = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			anti_air
+		}
+	}
+
+	############################ 7/2
+
+	MA_MOUNTAINEER_TEMPLATE_20_B = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MA_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MA_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 20
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 2
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 7
+				artillery_brigade = 2
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				anti_air = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			anti_air
+		}
+	}
+
+	############################ 4/4
+
+	MA_MOUNTAINEER_TEMPLATE_20_C = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MA_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_20w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MA_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 20
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 2
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 7
+				artillery_brigade = 2
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				anti_air = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			anti_air
+		}
+	}
+
+	######################################################## 40w
+
+	############################ pure mountaineer
+
+	MA_MOUNTAINEER_TEMPLATE_40_A = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MA_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_A
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MA_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 40
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 2
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 14
+				artillery_brigade = 4
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				logistics_company = 1
+				signal_company = 1
+				anti_air = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			logistics_company
+			signal_company
+			anti_air
+		}
+	}
+
+	############################ 7/2
+
+	MA_MOUNTAINEER_TEMPLATE_40_B = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MA_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_B
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MA_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 40
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 2
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 14
+				artillery_brigade = 4
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				logistics_company = 1
+				signal_company = 1
+				anti_air = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			logistics_company
+			signal_company
+			anti_air
+		}
+	}
+
+	############################ 4/4
+
+	MA_MOUNTAINEER_TEMPLATE_40_C = {
+		production_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MA_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+		upgrade_prio = {
+			base = 0
+
+			modifier = {
+				add = 10
+
+				#DESIGN REQ.
+				has_country_flag = EAI_FOCUS/infantry_design_C
+
+				#WIDTH REQ.
+				has_country_flag = EAI_FOCUS/infantry_width_40w
+
+				#DOCTRINE REQ.
+				has_country_flag = EAI_FOCUS/MA_doctrine
+
+				#FOCUS REQ.
+				has_country_flag = EAI_FOCUS/mountaineer_spec_ops
+			}
+		}
+
+		#TEMPLATE
+		target_width = 40
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 2
+
+		target_template = {
+			weight = 0.9
+			match_value = 10000
+
+			regiments = {
+				mountaineers = 14
+				artillery_brigade = 4
+			}
+
+			support = {
+				engineer = 1
+				anti_tank = 1
+				logistics_company = 1
+				signal_company = 1
+				anti_air = 1
+			}
+		}
+
+		allowed_types = {
+			#REGIMENTS
+			mountaineers
+			artillery_brigade
+
+			#SUPPORT
+			engineer
+			anti_tank
+			logistics_company
+			signal_company
+			anti_air
+		}
+	}
+}
