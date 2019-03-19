@@ -36,6 +36,13 @@ ideas = {
 			modifier = {
 				army_org_Factor = 0.05
 				planning_speed = 0.25
+				#production_speed_arms_factory_factor = 1000
+				#production_speed_industrial_complex_factor = 1000
+				#production_speed_infrastructure_factor = 1000
+				#industrial_capacity_factory = 1000
+				#industrial_capacity_dockyard = 1000
+				#production_speed_buildings_factor = 1000
+				#research_time_factor = -0.99
 			}
 		}
 
