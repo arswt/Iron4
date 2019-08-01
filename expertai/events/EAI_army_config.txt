@@ -396,6 +396,7 @@ country_event = { #armor type
 			factor = 1.15
 			modifier = { factor = 1.5 EAI_Armor_Research_Focus_PRESET = yes }
 			modifier = { factor = 5 tungsten > 30 NOT = { EAI_major_country = yes } } #minors with a lot of tungsten prefer medium armor
+			modifier = { factor = 10 tag = GER }
 			modifier = { #countries with an armor advisor
 				factor = 2
 				OR = {
@@ -431,6 +432,7 @@ country_event = { #armor type
 			modifier = { factor = 5 chromium > 30 NOT = { EAI_major_country = yes } } #minors with a lot of chromium prefer heavy armor
 			modifier = { factor = 0.1 NOT = { chromium > 15 } NOT = { EAI_major_country = yes } } #if a minor doesn't have chromium, prefer medium armor
 			modifier = { factor = 5 tag = FRA }
+			modifier = { factor = 10 tag = GER }
 			modifier = { #countries with an armor advisor
 				factor = 2
 				OR = {
@@ -559,6 +561,7 @@ country_event = { #armor width
 			factor = 1
 			modifier = { factor = 2 OR = { has_country_flag = EAI_FOCUS/marm_army_focus has_country_flag = EAI_FOCUS/harm_army_focus } }
 			modifier = { factor = 2 has_country_flag = EAI_FOCUS/MW_doctrine }
+			modifier = { factor = 5 tag = GER }
 			modifier = { factor = 0.25 NOT = { EAI_major_country = yes } }
 		}
 

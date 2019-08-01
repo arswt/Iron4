@@ -43,6 +43,10 @@ ideas = {
 				#industrial_capacity_dockyard = 1000
 				#production_speed_buildings_factor = 1000
 				#research_time_factor = -0.99
+				experience_gain_factor = 10
+				justify_war_goal_time = -0.90
+				experience_gain_army_unit_factor = 1
+				experience_gain_navy_unit_factor = 1
 			}
 		}
 

@@ -2,10 +2,10 @@
 -- 
 --------------------------------------------------------------------------------------------------------------
 	
-NDefines.NCountry.SUPPLY_PATH_MAX_DISTANCE = 8 					-- When supply route reach more than X nodes, the manpower+equipment delivery speed reach 100% penalty.
-NDefines.NCountry.REINFORCEMENT_DELIVERY_SPEED_MIN = 0.5 			-- The distance from the supply region to capital should affect the speed only a little bit. Main factor for penalty is overcrowded areas, and not the route length.
-NDefines.NCountry.REINFORCEMENT_EQUIPMENT_DELIVERY_SPEED = 0.009 	-- Modifier for army equipment reinforcement speed
-NDefines.NCountry.REINFORCEMENT_MANPOWER_DELIVERY_SPEED = 100 	-- Modifier for army manpower reinforcement delivery speed (travel time)
+NDefines.NCountry.SUPPLY_PATH_MAX_DISTANCE = 15 					-- When supply route reach more than X nodes, the manpower+equipment delivery speed reach 100% penalty.
+NDefines.NCountry.REINFORCEMENT_DELIVERY_SPEED_MIN = 0.6 			-- The distance from the supply region to capital should affect the speed only a little bit. Main factor for penalty is overcrowded areas, and not the route length.
+NDefines.NCountry.REINFORCEMENT_EQUIPMENT_DELIVERY_SPEED = 0.3 	-- Modifier for army equipment reinforcement speed
+NDefines.NCountry.REINFORCEMENT_MANPOWER_DELIVERY_SPEED = 10 	-- Modifier for army manpower reinforcement delivery speed (travel time)
 	
 NDefines.NMilitary.EXPERIENCE_COMBAT_FACTOR = 0.10 -- 0.25
 
@@ -29,8 +29,8 @@ NDefines.NAI.RESEARCH_BASE_DAYS = 1					                            -- AI adds a
 NDefines.NCountry.REINFORCEMENT_DIVISION_PRIORITY_COUNT = 8
 
 NDefines.NAI.DIVISION_UPGRADE_MIN_XP = 5							                -- Minimum XP before attempting to upgrade a division template.
-NDefines.NAI.DIVISION_CREATE_MIN_XP = 600 --100							            -- Minimum XP before attempting to create a fresh new division template.
-NDefines.NAI.VARIANT_UPGRADE_MIN_XP = 600 --50					                    -- Minimum XP before attempting to create a new variant.
+NDefines.NAI.DIVISION_CREATE_MIN_XP = 200 --100							            -- Minimum XP before attempting to create a fresh new division template.
+NDefines.NAI.VARIANT_UPGRADE_MIN_XP = 150 --50					                    -- Minimum XP before attempting to create a new variant.
 NDefines.NAI.UPGRADE_XP_RUSH_UPDATE = 5 --150								        -- If XP is above this on the daily tick the AI will attempt to spend it
 
 NDefines.NAI.DIVISION_DESIGN_WEIGHTS = {							                -- Base values used by AI to evaluate value of a stat
@@ -171,7 +171,7 @@ NDefines.NAI.DIPLOMACY_SEND_MAX_FACTION = 0.75
 
 --NDefines.NAI.MAX_VOLUNTEER_ARMY_FRACTION = 0.01
 
-NDefines.NAI.GENERATE_WARGOAL_THREAT_BASELINE = 0.6
+NDefines.NAI.GENERATE_WARGOAL_THREAT_BASELINE = 1
 
 --NDefines.NDiplomacy.JOIN_FACTION_LIMIT_CHANGE_AT_WAR = 0.2
 
@@ -199,7 +199,9 @@ NDefines.NAI.DIPLOMACY_IMPROVE_RELATION_COST_FACTOR = 7.0                       
 --------------------------------------------------------------------------------------------------------------
 -- LAND AI
 --------------------------------------------------------------------------------------------------------------
-
+NDefines.NMilitary.MAX_ARMY_EXPERIENCE = 5000
+NDefines.NMilitary.MAX_NAVY_EXPERIENCE = 5000
+NDefines.NMilitary.MAX_AIR_EXPERIENCE = 5000
 --NDefines.NAI.SUPPLY_CRISIS_LIMIT = 1.0
 
 --NDefines.NAI.PLAN_ATTACK_DEPTH_FACTOR = 0.5									-- Factor applied to size or enemy being attacked.
@@ -267,12 +269,12 @@ NDefines.NAI.ORG_UNIT_STRONG = 0.75												-- Organization % for unit to be 
 NDefines.NAI.STR_UNIT_STRONG = 0.75												-- Strength (equipment) % for unit to be considered strong
 
 NDefines.NAI.PLAN_FACTION_NORMAL_TO_EXECUTE = 0.65
-NDefines.NAI.ORG_UNIT_NORMAL = 0.6 --6												-- Organization % for unit to be considered normal
-NDefines.NAI.STR_UNIT_NORMAL = 0.6 --6												-- Strength (equipment) % for unit to be considered normal
+NDefines.NAI.ORG_UNIT_NORMAL = 0.5 --6												-- Organization % for unit to be considered normal
+NDefines.NAI.STR_UNIT_NORMAL = 0.5 --6												-- Strength (equipment) % for unit to be considered normal
 
 NDefines.NAI.PLAN_FACTION_WEAK_TO_ABORT = 0.5 --0.50		0.65		        -- % or more of units in an order to consider ececuting the plan
-NDefines.NAI.ORG_UNIT_WEAK = 0.45 --0.45												-- Organization % for unit to be considered weak
-NDefines.NAI.STR_UNIT_WEAK = 0.45 --0.45												-- Strength (equipment) % for unit to be considered weak
+NDefines.NAI.ORG_UNIT_WEAK = 0.25 --0.45												-- Organization % for unit to be considered weak
+NDefines.NAI.STR_UNIT_WEAK = 0.25 --0.45												-- Strength (equipment) % for unit to be considered weak
 
 NDefines.NAI.PLAN_AVG_PREPARATION_TO_EXECUTE = 0.5				            -- % or more average plan preparation before executing
 NDefines.NAI.AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.5			                -- If less than this fraction of units on a front is moving  AI sees it as ready for action
@@ -297,16 +299,16 @@ NDefines.NAI.PLAN_MIN_SIZE_FOR_FALLBACK = 5000					                -- A country 
 NDefines.NNavy.COMBAT_MIN_WIN_CHANCE_TO_KEEP_FIGHTING = 0.5
 NDefines.NNavy.REPAIR_AND_RETURN_UNIT_DYING_STR = 0.5
 
-NDefines.NNavy.REPAIR_AND_RETURN_PRIO_LOW = 0.8									--vanilla = 0.2
-NDefines.NNavy.REPAIR_AND_RETURN_PRIO_MEDIUM = 0.85								--vanilla = 0.5
+NDefines.NNavy.REPAIR_AND_RETURN_PRIO_LOW = 0.5									--vanilla = 0.2
+NDefines.NNavy.REPAIR_AND_RETURN_PRIO_MEDIUM = 0.75								--vanilla = 0.5
 NDefines.NNavy.REPAIR_AND_RETURN_PRIO_HIGH = 0.9								--vanilla = 0.9
 
-NDefines.NNavy.REPAIR_AND_RETURN_PRIO_LOW_COMBAT = 0.70							--vanilla = 0.1
-NDefines.NNavy.REPAIR_AND_RETURN_PRIO_MEDIUM_COMBAT = 0.75						--vanilla = 0.3
+NDefines.NNavy.REPAIR_AND_RETURN_PRIO_LOW_COMBAT = 0.30							--vanilla = 0.1
+NDefines.NNavy.REPAIR_AND_RETURN_PRIO_MEDIUM_COMBAT = 0.55						--vanilla = 0.3
 NDefines.NNavy.REPAIR_AND_RETURN_PRIO_HIGH_COMBAT = 0.80						--vanilla = 0.5
 
-NDefines.NNavy.REPAIR_AND_RETURN_AMOUNT_SHIPS_LOW = 0.7							--vanilla = 0.2
-NDefines.NNavy.REPAIR_AND_RETURN_AMOUNT_SHIPS_MEDIUM = 0.8						--vanilla = 0.4
+NDefines.NNavy.REPAIR_AND_RETURN_AMOUNT_SHIPS_LOW = 0.5							--vanilla = 0.2
+NDefines.NNavy.REPAIR_AND_RETURN_AMOUNT_SHIPS_MEDIUM = 0.7						--vanilla = 0.4
 NDefines.NNavy.REPAIR_AND_RETURN_AMOUNT_SHIPS_HIGH = 0.9						--vanilla = 0.8
 
 NDefines.NAI.MAX_DISTANCE_NALAV_INVASION = 200.0								-- AI is extremely unwilling to plan naval invasions above this naval distance limit.
@@ -386,7 +388,7 @@ NDefines.NAI.NAVAL_FIGHTERS_PER_PLANE = 0.1                                     
 
 --NDefines.NAI.LAND_DEFENSE_FIGHERS_PER_PLANE = 2.0                                -- [1.0]  -- Amount of air superiority planes requested per enemy plane
 NDefines.NAI.LAND_DEFENSE_INTERSEPTORS_PER_BOMBERS = 1.0                           -- [2.0]  -- Amount of air interceptor planes requested per enemy bomber
-NDefines.NAI.LAND_DEFENSE_INTERSEPTORS_PER_PLANE = 0.0                             -- [1.0]  -- Amount of air interceptor planes requested per enemy plane (non bomber)
+NDefines.NAI.LAND_DEFENSE_INTERSEPTORS_PER_PLANE = 0.3                             -- [1.0]  -- Amount of air interceptor planes requested per enemy plane (non bomber)
 
 --NDefines.NAI.LAND_COMBAT_AIR_SUPERIORITY_IMPORTANCE = 1.0                          -- [0.20] -- Strategic importance of air superiority ( amount of enemy planes in area )
 --NDefines.NAI.LAND_COMBAT_OUR_ARMIES_AIR_IMPORTANCE = 100                           -- [12]   -- Strategic importance of our armies
